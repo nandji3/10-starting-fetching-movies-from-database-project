@@ -27,3 +27,39 @@ button:active {
     background-color: #460897;
     border-color: #460897;
 }
+
+.container {
+    max-width: 90%;
+    margin: 1rem 1rem;
+}
+
+.form {
+    margin: 0.5rem 0;
+}
+
+.form div {
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+.inputDiv label {
+    width: 80%;
+}
+
+.inputDiv label input {
+    width: 70%;
+    padding: 0.1rem 0.8rem;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+}
+.inputDiv label textarea {
+    width: 60%;
+    padding: 0.1rem 0.8rem;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+}
+
+.inputTextArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -50,15 +50,13 @@ function App() {
 
   const addMovieHandler = async (movie) => {
     try {
-      const response = await fetch('https://store-movie-data-react-js-default-rtdb.firebaseio.com/movies.json', {
+      await fetch('https://store-movie-data-react-js-default-rtdb.firebaseio.com/movies.json', {
         method: 'POST',
         body: JSON.stringify(movie),
         headers: {
           'Content-Type': 'application/json'
         }
       });
-      // const data = await response.json();
-      // console.log(data)
     }
     catch (error) {
       setIsError(error.message);

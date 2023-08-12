@@ -6,12 +6,12 @@ const initialMovie = {
     releaseDate: '',
 }
 
-const AddMovie = () => {
+const AddMovie = (props) => {
     const [movie, setMovie] = useState(initialMovie)
-    const [allMovies, setAllMovies] = useState([])
+    // const [allMovies, setAllMovies] = useState([])
 
-    console.log(movie)
-    console.log(allMovies)
+    // console.log(movie)
+    // console.log(allMovies)
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -20,20 +20,24 @@ const AddMovie = () => {
             return { ...prevMovie, [name]: value }
         })
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        setAllMovies((prevMovies) => {
-            return [...prevMovies, movie]
-        })
+        props.onAddMovie(movie);
         setMovie(initialMovie)
     }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     setAllMovies((prevMovies) => {
+    //         return [...prevMovies, movie]
+    //     })
+    //     setMovie(initialMovie)
+    // }
 
     return (
         <div className="container">
             <form className="form" onSubmit={handleSubmit} >
                 <div className="inputDiv">
-                    <label >
+                    <label className='title'>
                         Title :
                         &nbsp;<input type="text" name="title" value={movie.title} onChange={handleChange} placeholder="Enter Movie Title" required />
                     </label>
@@ -41,7 +45,7 @@ const AddMovie = () => {
                 <div className="inputDiv">
                     <label className="inputTextArea">
                         Opening Text :
-                        &nbsp;<textarea type="text" maxLength="50" name="openingText" value={movie.openingText} onChange={handleChange} placeholder="Enter Opening Text" required />
+                        &nbsp;<textarea type="text" rows='5' name="openingText" value={movie.openingText} onChange={handleChange} placeholder="Enter Opening Text" required />
                     </label>
                 </div>
                 <div className="inputDiv">

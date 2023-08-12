@@ -52,7 +52,8 @@ button:active {
     border-radius: 0.3rem;
 }
 .inputDiv label textarea {
-    width: 60%;
+    width: 70%;
+    margin-right: -2.5rem;
     padding: 0.1rem 0.8rem;
     box-sizing: border-box;
     border-radius: 0.3rem;
@@ -62,4 +63,9 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 1.8rem;
+}
+
+.title {
+    margin-left: 3.8rem;
 }
